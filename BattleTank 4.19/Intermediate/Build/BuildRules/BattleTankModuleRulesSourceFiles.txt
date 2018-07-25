@@ -1,0 +1,3 @@
+C:\Users\Oscar\Documents\04_BattleTank\BattleTank 4.19\Source\BattleTank\BattleTank.Build.cs
+C:\Users\Oscar\Documents\04_BattleTank\BattleTank 4.19\Source\BattleTank.Target.cs
+C:\Users\Oscar\Documents\04_BattleTank\BattleTank 4.19\Source\BattleTankEditor.Target.cs
