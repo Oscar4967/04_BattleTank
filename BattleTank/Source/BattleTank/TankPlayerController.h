@@ -18,6 +18,9 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 private:
 	void AimTowardsCrosshair(); //start the tank moving the barrel towards the crosshair location
 
+	// Return an OUT parameter, true if hit landscape
+	bool GetSightRayHitLocation(FVector&) const;
+
 public:
 	ATank * GetControlledTank() const;
 
