@@ -2,6 +2,7 @@
 
 #include "Tank.h"
 
+class UTankBarrel;
 
 // Sets default values
 ATank::ATank()
@@ -30,7 +31,7 @@ void ATank::Tick(float DeltaTime)
 }
 
 
-void ATank::SetBarrelReference(UStaticMeshComponent* BarrelToSet)
+void ATank::SetBarrelReference(UTankBarrel* BarrelToSet)
 {
 	TankAimingComponent->SetBarrelReference(BarrelToSet);
 }
