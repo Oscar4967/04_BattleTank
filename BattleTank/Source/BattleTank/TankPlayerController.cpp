@@ -48,6 +48,8 @@ void ATankPlayerController::AimTowardsCrosshair()
 }
 
 
+
+
 //Get world location if linetrace through crosshair, true if hits landscape
 bool ATankPlayerController::GetSightRayHitLocation(FVector& OurHitLocation) const
 {
@@ -80,7 +82,6 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector LookDirection, FVec
 		)
 	{
 		OurHitLocation = HitResult.Location;
-		//UE_LOG(LogTemp, Warning, TEXT("going good this far: %s"), *HitResult.Location.ToString());
 		return true;
 	}
 	//OurHitLocation = FVector(0);
