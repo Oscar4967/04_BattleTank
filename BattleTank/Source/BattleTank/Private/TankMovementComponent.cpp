@@ -22,6 +22,7 @@ void UTankMovementComponent::IntendMoveForward(float Throw)
 
 void UTankMovementComponent::IntendTurnRight(float Throw)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Intend turn right, throw: %f"), Throw)
 	LeftTrack->SetThrottle(Throw);
 	RightTrack->SetThrottle(-Throw);
 	//TODO clamp
@@ -29,6 +30,7 @@ void UTankMovementComponent::IntendTurnRight(float Throw)
 
 void UTankMovementComponent::IntendTurnLeft(float Throw)
 {
+	UE_LOG(LogTemp, Warning, TEXT("Intend turn left, throw: %f"), Throw)
 	LeftTrack->SetThrottle(-Throw);
 	RightTrack->SetThrottle(Throw);
 	//TODO clamp
