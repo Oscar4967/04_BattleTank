@@ -5,6 +5,11 @@
 #include "Tank.h"
 
 
+void ATankAIController::BeginPlay()
+{
+	Super::BeginPlay();
+}
+
 // Called every frame
 void ATankAIController::Tick(float DeltaTime)
 {
@@ -14,21 +19,13 @@ void ATankAIController::Tick(float DeltaTime)
 	auto ControlledTank = Cast<ATank>(GetPawn());
 	if (PlayerTank)
 	{
-		//Move towards player
-		MoveToActor(PlayerTank, AcceptanceRadius); // TODO check if radius is in cm
+		// TODO Move towards the player
 
-		//Aim towards the player
+		// Move towards the player
+		MoveToActor(PlayerTank, AcceptanceRadius); // TODO check radius is in cm
+		// Aim towards the player
 		ControlledTank->AimAt(PlayerTank->GetActorLocation());
-
 		ControlledTank->Fire(); // TODO limit firing rate
 	}
 }
-
-//end of tick
-
-void ATankAIController::BeginPlay()
-{
-	Super::BeginPlay();
-}
-
 
