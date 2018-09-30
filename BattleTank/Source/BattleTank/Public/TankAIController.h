@@ -8,7 +8,7 @@
 #include "TankAIController.generated.h"
 
 // Forward declaration
-class ATank;
+class UTankAimingComponent; // TODO Is this really needed?
 
 /**
  * 
@@ -24,5 +24,5 @@ public:
 
 private:
 	// How close the AI tank can get
-	float AcceptanceRadius = 3000;
+	float AcceptanceRadius = 300;
 };
