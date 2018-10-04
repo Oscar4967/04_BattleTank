@@ -43,11 +43,11 @@ public:
 	EFiringState GetFiringState() const;
 
 	UFUNCTION(BlueprintCallable, Category = "State")
-	int GetAmmoCount() const;
+	int32 GetAmmoCount() const;
 
 protected:
 	EFiringState FiringState = EFiringState::Aiming;
-	int AmmoCount = 3;
+	
 
 private:
 	// Sets default values for this component's properties
@@ -71,7 +71,12 @@ private:
 	TSubclassOf<AProjectile> ProjectileBlueprint = nullptr;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Firing")
-	float ReloadTimeInSeconds = 3;
+	float ReloadTimeInSeconds = 0.1;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Firing")
+	int32 InitialAmmoCount = 20;
+
+	int32 AmmoCount = InitialAmmoCount;
 
 	double LastFireTime = 0;
 	
