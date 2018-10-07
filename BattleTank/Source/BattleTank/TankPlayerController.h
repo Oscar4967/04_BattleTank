@@ -25,6 +25,8 @@ protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = "Setup")
 	void FoundAimingComponent(UTankAimingComponent* AimCompRef);
 
+	virtual void SetPawn(APawn* InPawn) override;
+
 private:
 
 	//start the tank moving the barrel towards the crosshair location
@@ -46,4 +48,13 @@ private:
 
 	bool GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const;
 	bool GetLookVectorHitLocation(FVector LookDirection, FVector& OurHitLocation) const;
+
+	UFUNCTION()
+	void OnPossessedTankDeath();
+
+
+	
+
+	
+	// Call StartSpectatingOnly() when dead
 };

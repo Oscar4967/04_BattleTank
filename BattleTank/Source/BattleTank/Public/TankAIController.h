@@ -18,6 +18,10 @@ class BATTLETANK_API ATankAIController : public AAIController
 {
 	GENERATED_BODY()
 
+private:
+	UFUNCTION()
+	void OnPossessedTankDeath();
+
 public:
 	virtual void BeginPlay() override;
 	virtual void Tick(float DeltaTime) override;
@@ -26,4 +30,6 @@ protected:
 	// How close the AI tank can get in centimeters
 	UPROPERTY(EditDefaultsOnly, Category = "Setup")
 	float AcceptanceRadius = 3000;
+
+	virtual void SetPawn(APawn* InPawn) override;
 };
