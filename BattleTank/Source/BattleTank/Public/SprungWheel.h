@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "PhysicsEngine/PhysicsConstraintComponent.h"
 #include "Components/SphereComponent.h"
+#include "Components/PrimitiveComponent.h"
 #include "SprungWheel.generated.h"
 
 UCLASS()
@@ -28,6 +29,11 @@ protected:
 private:
 	void SetupConstraint();
 
+	UFUNCTION()
+	void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+
+
+	void ApplyForce();
 
 	// Components
 	UPROPERTY(VisibleAnywhere, Category = "Components")
@@ -38,5 +44,7 @@ private:
 	UPhysicsConstraintComponent * WheelAxelConstraint = nullptr;
 	UPROPERTY(VisibleAnywhere, Category = "Components")
 	USphereComponent * Axel = nullptr;
+
+	float TotalForceMagnitudeThisFrame = 0;
 
 };
